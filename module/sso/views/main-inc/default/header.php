@@ -8,13 +8,13 @@
         <meta name="description" content="">
 
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title></title>
+        <title><?php echo $title ?></title>
         <!-- animation CSS -->
-        <link href="css/animate.css" rel="stylesheet">
+        <link href="<?php echo base_url('css/animate.css') ?>" rel="stylesheet">
         <!-- Custom CSS -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="<?php echo base_url('css/style.css') ?>" rel="stylesheet">
         <!-- color CSS -->
-        <link href="css/colors/default.css" id="theme" rel="stylesheet">
+        <link href="<?php echo base_url('css/colors/default.css') ?>" id="theme" rel="stylesheet">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>

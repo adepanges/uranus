@@ -8,28 +8,29 @@ class Layout {
         $this->_ci = &get_instance();
     }
 
-    function display ($view, $data = NULL, $template = 'default', $returned = FALSE)
+    function view ($view, $data = NULL, $template = 'default', $returned = FALSE)
     {
+        if(isset($data['title']) && !empty($data['title'])) $data['title'] = $data['title'] .' - '. $this->_ci->config->item('app_name');
+        else $data['title'] = $this->_ci->config->item('app_name');
 
-        if(!isset($data['title'])) $data['title'] = NULL;
-        $data['_header'] = $this->_ci->load->view('main-inc/header', $data, TRUE);
+        $data['_header'] = $this->_ci->load->view('main-inc/'.$template.'/header', $data, TRUE);
 
         if(is_array($view))
         {
             $data['_content'] = array();
             foreach ($view as $t)
             {
-                array_push($data['_content'], $this->_ci->load->view($t, $data, TRUE));
+                array_push($data['_content'], $this->_ci->load->view('inc/'.$t, $data, TRUE));
             }
         }
         else
         {
             if($view !== '')
-                $data['_content'] = $this->_ci->load->view($view, $data, TRUE);
+                $data['_content'] = $this->_ci->load->view('inc/'.$view, $data, TRUE);
             else
                 $data['_content'] = "";
         }
-        $data['_footer'] = $this->_ci->load->view('main-inc/footer', $data, TRUE);
+        $data['_footer'] = $this->_ci->load->view('main-inc/'.$template.'/footer', $data, TRUE);
         $this->_ci->load->view('layout/default', $data, $returned);
     }
 }
