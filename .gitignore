@@ -24,3 +24,11 @@ composer.lock
 *.sublime-project
 /tests/tests/
 /tests/results/
+
+# symlink ignore
+module/*/helpers/
+module/*/language/
+module/*/libraries/
+module/*/third_party/
+
+package-lock\.json
