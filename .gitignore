@@ -1,5 +1,8 @@
 .DS_Store
 
+resources/cache/blade/*
+!resources/cache/blade/index.html
+
 module/*/cache/*
 !module/*/cache/index.html
 
