@@ -12,33 +12,6 @@ $(document).ready(function () {
         $('#side-menu').metisMenu();
     });
 
-    /* ===== Theme Settings ===== */
-
-    $(".open-close").on("click", function () {
-        body.toggleClass("show-sidebar");
-    });
-
-    /* ===== Open-Close Right Sidebar ===== */
-
-    $(".right-side-toggle").on("click", function () {
-        $(".right-sidebar").slideDown(50).toggleClass("shw-rside");
-        $(".fxhdr").on("click", function () {
-            body.toggleClass("fix-header"); /* Fix Header JS */
-        });
-        $(".fxsdr").on("click", function () {
-            body.toggleClass("fix-sidebar"); /* Fix Sidebar JS */
-        });
-
-        /* ===== Service Panel JS ===== */
-
-        var fxhdr = $('.fxhdr');
-        if (body.hasClass("fix-header")) {
-            fxhdr.attr('checked', true);
-        } else {
-            fxhdr.attr('checked', false);
-        }
-    });
-
     /* ===========================================================
         Loads the correct sidebar on window load.
         collapses the sidebar on window resize.
@@ -204,7 +177,7 @@ $(document).ready(function () {
         $("#recoverform").fadeIn();
     });
 
-    /* ================================================================= 
+    /* =================================================================
         Update 1.5
         this is for close icon when navigation open in mobile view
     ================================================================= */
